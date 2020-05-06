@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 //create simple componets
 const TableHeader = () => {
@@ -18,6 +18,9 @@ const TableBody = (props) => {
             <tr key= {index}>
                 <td>{row.name}</td>
                 <td>{row.job}</td>
+                <td>
+                    <button onClick={()=> props.removeCharacter(index)}>Delete</button>
+                </td>
             </tr>
         )
     });
@@ -29,19 +32,16 @@ const TableBody = (props) => {
     )
 }
 
-
-//Accessing the data passed through to Table
-// TableBody props contains the data 
-class Table extends Component{
-    render(){
-        const {characterData} = this.props;
-        return(
+//it would be best practice to transform Table into a simple component from the class component it currently is.
+const Table = (props) => {
+   const {characterData, removeCharacter} = props;
+        
+   return(
             <table>
                 <TableHeader />
-                <TableBody characterData={characterData}/>
+                <TableBody characterData={characterData} removeCharacter={removeCharacter}/>
             </table>
         )
-    }
 }
 
 export default Table
