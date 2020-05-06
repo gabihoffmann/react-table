@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    background-color: rgba(255, 249, 249, 0.897);
+}
+
+main {
+    display: block;
+}
+
+h1{
+    font-size: 2em;
+    margin: 0.67em 0;
+    color: rebeccapurple;
+}

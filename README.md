@@ -1,3 +1,20 @@
+# Getting Started with React
+Learn the fundamentals of React with [Tania Rascia](https://www.taniarascia.com/)
+
+# Prerequisites
+  * Basic familiarity with HTML & CSS
+  * Basic knowledge of JavaScript
+  * Basic understanding of the DOM
+  * Node.js and npm installed
+
+# Goals
+  * Learn about essential React concepts
+  * Build a very simple React app
+
+# Result
+  * View Demo
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
