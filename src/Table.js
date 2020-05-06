@@ -11,33 +11,34 @@ const TableHeader = () => {
         </thead>
     )
 }
-const TableBody = () => {
+const TableBody = (props) => {
+    const rows = props.characterData.map((row,index) => {
+        return (
+            // Keys: https://reactjs.org/docs/lists-and-keys.html#keys
+            <tr key= {index}>
+                <td>{row.name}</td>
+                <td>{row.job}</td>
+            </tr>
+        )
+    });
+
     return(
         <tbody>
-                <tr>
-                    <td>Charlie</td>
-                    <td>Janitor</td>
-                </tr>
-                <tr>
-                    <td>Jake</td>
-                    <td>Bouncer</td>
-                </tr>
-                <tr>
-                    <td>Terry</td>
-                    <td>Actor</td>
-                </tr>
+            {rows}
         </tbody>
     )
 }
 
 
-//create the class componet Table
+//Accessing the data passed through to Table
+// TableBody props contains the data 
 class Table extends Component{
     render(){
+        const {characterData} = this.props;
         return(
             <table>
                 <TableHeader />
-                <TableBody />
+                <TableBody characterData={characterData}/>
             </table>
         )
     }
