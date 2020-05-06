@@ -1,22 +1,10 @@
 import React, {Component} from 'react'
 import Table from './Table'
+import Form from './Form'
 class App extends Component{
     //create a STATE object
     state = {
-        characters : [
-            {
-                name: 'Charlie',
-                job: 'Janitor'
-            },
-            {
-                name: 'Mike',
-                job: 'Bouncer'
-            },
-            {
-                name: 'Dee',
-                job: 'Aspire actress'
-            }
-        ]
+        characters : []
     };
 
     /**
@@ -25,7 +13,6 @@ class App extends Component{
      */
    removeCharacter = index => {
        const {characters} = this.state;
-       
        /**
         * use this.setState()
         * a built-in method for manipulating state
@@ -37,11 +24,19 @@ class App extends Component{
         });
    }
 
+   //this function will update the state adding the existing charactes and the new one
+   handleSubmit = (character) =>{
+    this.setState({
+        characters: [...this.state.characters, character ]
+    })
+}
+
    render(){
        const {characters} = this.state
        return(
            <div className="container">
                <Table  characterData={characters} removeCharacter={this.removeCharacter}/>
+               <Form  handleSubmit={this.handleSubmit}/>
            </div>
        );
    }
